@@ -40,5 +40,20 @@ public class CreateUser {
 
     }
 
+    @Step("Создаёт пользователя с одним незаполненным обязательным полем")
+    public String createUserWithoutRequiredField(CreateUserPojoRq request) {
+        return given()
+                .spec(REQ_SPEC)
+                .when()
+                .body(request)
+                .post("register")
+                .then()
+                .spec(RES_SPEC_FORBIDDEN)
+                .body("success", is(false))
+                .extract()
+                .jsonPath().getString("message");
+
+    }
+
 
 }
