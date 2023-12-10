@@ -8,6 +8,7 @@ import ru.practicum.pojo.LoginUserModelRq;
 import ru.practicum.steps.Checks;
 import ru.practicum.steps.Login;
 
+@DisplayName("Логин")
 public class LoginWithWrongTest extends CreateDeleteUser {
 
     Login loginUser = new Login();
@@ -18,7 +19,7 @@ public class LoginWithWrongTest extends CreateDeleteUser {
 
     @DisplayName("Логин существующего пользователя с ошибкой в email")
     @Test
-    public void loginWithWrongInEmail() {
+    public void loginWithWrongInEmailTest() {
         var request = LoginUserModelRq.login(wrongEmail, password);
         String messageError = loginUser.loginWithWrong(request);
 
@@ -29,7 +30,7 @@ public class LoginWithWrongTest extends CreateDeleteUser {
 
     @DisplayName("Логин существующего пользователя с ошибкой в password")
     @Test
-    public void loginWithWrongInPassword() {
+    public void loginWithWrongInPasswordTest() {
         var request = LoginUserModelRq.login(email, wrongPassword);
         String messageError = loginUser.loginWithWrong(request);
 

@@ -2,7 +2,6 @@ package ru.practicum.user;
 
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
-import ru.practicum.methods.CreateDeleteUser;
 import ru.practicum.pojo.CreateUserModelRq;
 import ru.practicum.steps.Checks;
 import ru.practicum.steps.CreateUser;
@@ -15,7 +14,7 @@ public class CreateWithoutRequiredFieldTest {
 
     @DisplayName("Создание нового пользователя с пустым полем логин/емайл")
     @Test
-    public void createWithoutEmailFieldTest(){
+    public void createWithoutEmailFieldTest() {
         var request = CreateUserModelRq.newUserWithoutEmailField();
         String messageError = create.createUserWithoutRequiredField(request);
 
@@ -26,7 +25,7 @@ public class CreateWithoutRequiredFieldTest {
 
     @DisplayName("Создание нового пользователя с пустым полем пароль")
     @Test
-    public void createWithoutPasswordFieldTest(){
+    public void createWithoutPasswordFieldTest() {
         var request = CreateUserModelRq.newUserWithoutPasswordField();
         String messageError = create.createUserWithoutRequiredField(request);
 
@@ -37,7 +36,7 @@ public class CreateWithoutRequiredFieldTest {
 
     @DisplayName("Создание нового пользователя c пустым полем Имя")
     @Test
-    public void createWithoutNameFieldTest(){
+    public void createWithoutNameFieldTest() {
         var request = CreateUserModelRq.newUserWithoutNameField();
         String messageError = create.createUserWithoutRequiredField(request);
 

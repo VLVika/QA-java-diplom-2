@@ -14,10 +14,9 @@ public class CreateExistingUserTest extends CreateDeleteUser {
     CreateUser create = new CreateUser();
 
 
-
     @DisplayName("Создание пользователя, который уже зарегистрирован")
     @Test
-    public void createExistingUser() {
+    public void createExistingUserTest() {
         String messageError = create.createExistingUser(request);
 
         Checks.checkResult(expected, messageError);

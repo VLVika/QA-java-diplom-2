@@ -14,5 +14,9 @@ public class GlobalVariables {
     //логин
     public static final String ENDPOINT_LOGIN = "login";
 
+    //изменение данных
+    public static final String ENDPOINT_USER = "user";
+
 
 }
+
