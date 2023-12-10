@@ -8,5 +8,11 @@ public class GlobalVariables {
     //путь с аутентификацией
     public static final String PATH_AUT = "auth/";
 
+    //регистраци
+    public static final String ENDPOINT_REGISTRATION = "register";
+
+    //логин
+    public static final String ENDPOINT_LOGIN = "login";
+
 
 }

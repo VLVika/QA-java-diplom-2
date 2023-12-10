@@ -5,9 +5,11 @@ import ru.practicum.pojo.CreateUserPojoRq;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
+import static ru.practicum.util.GlobalVariables.ENDPOINT_REGISTRATION;
 import static ru.practicum.util.Specification.*;
 
 public class CreateUser {
+
 
     @Step("Создаёт пользователя")
     public String createNewUserAndGetToken(CreateUserPojoRq request) {
@@ -15,7 +17,7 @@ public class CreateUser {
                 .spec(REQ_SPEC)
                 .when()
                 .body(request)
-                .post("register")
+                .post(ENDPOINT_REGISTRATION)
                 .then()
                 .spec(RES_SPEC_OK)
                 .body("success", is(true))
@@ -31,7 +33,7 @@ public class CreateUser {
                 .spec(REQ_SPEC)
                 .when()
                 .body(request)
-                .post("register")
+                .post(ENDPOINT_REGISTRATION)
                 .then()
                 .spec(RES_SPEC_FORBIDDEN)
                 .body("success", is(false))
@@ -46,7 +48,7 @@ public class CreateUser {
                 .spec(REQ_SPEC)
                 .when()
                 .body(request)
-                .post("register")
+                .post(ENDPOINT_REGISTRATION)
                 .then()
                 .spec(RES_SPEC_FORBIDDEN)
                 .body("success", is(false))

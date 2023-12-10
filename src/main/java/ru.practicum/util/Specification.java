@@ -43,4 +43,12 @@ public class Specification {
                     .log(LogDetail.ALL)
                     .expectStatusCode(HttpURLConnection.HTTP_FORBIDDEN)
                     .build();
+
+
+    public static final ResponseSpecification RES_SPEC_UNAUTHORIZED =
+            new ResponseSpecBuilder()
+                    .log(LogDetail.ALL)
+                    .expectStatusCode(HttpURLConnection.HTTP_UNAUTHORIZED)
+                    .build();
+
 }

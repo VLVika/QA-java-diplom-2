@@ -8,13 +8,11 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserPojoRq {
+@NoArgsConstructor
+public class LoginUserPojoRq {
 
     private String email;
     private String password;
-    private String name;
-
 
 }
