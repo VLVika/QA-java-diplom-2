@@ -17,6 +17,13 @@ public class GlobalVariables {
     //изменение данных
     public static final String ENDPOINT_USER = "user";
 
+    //ингредиенты
+    public static final String ENDPOINT_INGREDIENTS = "ingredients";
+
+    //заказ
+    public static final String ENDPOINT_ORDER = "orders";
+
+
 
 }
 

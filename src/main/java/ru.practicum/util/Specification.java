@@ -26,6 +26,16 @@ public class Specification {
                     .build();
 
 
+    public static final RequestSpecification REQ_SPEC_WITOUT_AUT =
+            new RequestSpecBuilder()
+                    .addFilter(new AllureRestAssured())
+                    .setContentType(ContentType.JSON)
+                    .setRelaxedHTTPSValidation()
+                    .setBaseUri(BASE_URL)
+                    .log(LogDetail.ALL)
+                    .build();
+
+
     public static final ResponseSpecification RES_SPEC_OK =
             new ResponseSpecBuilder()
                     .log(LogDetail.ALL)
