@@ -1,5 +1,6 @@
 package ru.practicum.methods;
 
+import io.qameta.allure.junit4.DisplayName;
 import org.junit.After;
 import org.junit.Before;
 import ru.practicum.pojo.CreateUserModelRq;
@@ -15,16 +16,19 @@ public class CreateDeleteUser {
     protected String password;
     protected CreateUserPojoRq request;
 
+    @DisplayName("Регистрирует пользователя")
     @Before
-    public void createUserBeforeTest(){
+    public void createUserBeforeTest() {
         request = CreateUserModelRq.newUserAllFieldsRandom();
         email = request.getEmail();
         password = request.getPassword();
         token = user.createNewUserAndGetToken(request);
     }
 
+
+    @DisplayName("Удаляет пользователя")
     @After
-    public void deleteUserAfterTest(){
+    public void deleteUserAfterTest() {
         DeleteUser.deleteUser(token);
     }
 

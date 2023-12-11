@@ -61,4 +61,17 @@ public class Specification {
                     .expectStatusCode(HttpURLConnection.HTTP_UNAUTHORIZED)
                     .build();
 
+
+    public static final ResponseSpecification RES_SPEC_BAD_REQUEST =
+            new ResponseSpecBuilder()
+                    .log(LogDetail.ALL)
+                    .expectStatusCode(HttpURLConnection.HTTP_BAD_REQUEST)
+                    .build();
+
+
+    public static final ResponseSpecification RES_SPEC_INTERNAL_ERROR =
+            new ResponseSpecBuilder()
+                    .log(LogDetail.ALL)
+                    .expectStatusCode(HttpURLConnection.HTTP_INTERNAL_ERROR)
+                    .build();
 }

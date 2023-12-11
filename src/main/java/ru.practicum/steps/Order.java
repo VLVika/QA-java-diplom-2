@@ -44,4 +44,80 @@ public class Order {
     }
 
 
+    @Step("Создаёт заказ без ингредиентов под авторизованным пользователем")
+    public String createOrderAuthorUserWithoutIngredients(CreateOrderPojoRq request, String token){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .header("Authorization", token)
+                .when()
+                .body(request)
+                .post(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_BAD_REQUEST)
+                .body("success", is(false))
+                .extract()
+                .jsonPath()
+                .getString("message");
+    }
+
+
+    @Step("Создаёт заказ без ингредиентов не авторизованным пользователем")
+    public String createOrderNoAuthorUserWithoutIngredients(CreateOrderPojoRq request){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .when()
+                .body(request)
+                .post(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_UNAUTHORIZED)
+                .body("success", is(false))
+                .extract()
+                .jsonPath()
+                .getString("message");
+    }
+
+
+    @Step("Создаёт заказ с ингредиентами не авторизованным пользователем")
+    public Response createOrderNoAuthorUserWithIngredients(CreateOrderPojoRq request){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .when()
+                .body(request)
+                .post(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_UNAUTHORIZED)
+                .extract()
+                .response();
+    }
+
+
+    @Step("Создаёт заказ с некорректным id ингредиента под авторизованным пользователем")
+    public Response createOrderAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request, String token){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .header("Authorization", token)
+                .when()
+                .body(request)
+                .post(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_INTERNAL_ERROR)
+                .extract()
+                .response();
+    }
+
+
+    @Step("Создаёт заказ с некорректным id ингредиента не авторизованным пользователем")
+    public Response createOrderNoAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .when()
+                .body(request)
+                .post(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_UNAUTHORIZED)
+                .extract()
+                .response();
+    }
+
+
 }
