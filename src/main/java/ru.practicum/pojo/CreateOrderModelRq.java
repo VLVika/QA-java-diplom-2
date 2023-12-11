@@ -7,7 +7,7 @@ import java.util.List;
 public class CreateOrderModelRq {
 
     @Step("Создает Json запрос с ингредиентами для создания заказа")
-    public static CreateOrderPojoRq createOrder(List<String> ingredients){
+    public static CreateOrderPojoRq createOrder(List<String> ingredients) {
         return CreateOrderPojoRq.builder()
                 .ingredients(ingredients)
                 .build();

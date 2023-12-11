@@ -4,17 +4,16 @@ import io.qameta.allure.Step;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
-import java.net.HttpURLConnection;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
-import static ru.practicum.util.Specification.*;
+import static ru.practicum.util.Specification.REQ_SPEC;
+import static ru.practicum.util.Specification.RES_SPEC_ACCEPTED;
 
 public class DeleteUser {
 
     @Step("Удаляет пользователя")
     public static Response deleteUser(String token) {
-        return  given()
+        return given()
                 .spec(REQ_SPEC)
                 .header("Authorization", token)
                 .contentType(ContentType.JSON)

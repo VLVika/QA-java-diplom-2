@@ -1,7 +1,6 @@
 package ru.practicum.steps;
 
 import io.qameta.allure.Step;
-import ru.practicum.pojo.LoginUserModelRq;
 import ru.practicum.pojo.LoginUserPojoRq;
 
 import static io.restassured.RestAssured.given;
@@ -12,7 +11,7 @@ import static ru.practicum.util.Specification.*;
 public class Login {
 
     @Step("Логинится в систему")
-    public String login(LoginUserPojoRq request){
+    public String login(LoginUserPojoRq request) {
         return given()
                 .spec(REQ_SPEC)
                 .when()
@@ -26,7 +25,7 @@ public class Login {
     }
 
     @Step("Логинится в систему c ошибкой в логине или пароле")
-    public String loginWithWrong(LoginUserPojoRq request){
+    public String loginWithWrong(LoginUserPojoRq request) {
         return given()
                 .spec(REQ_SPEC)
                 .when()

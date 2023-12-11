@@ -1,6 +1,5 @@
 package ru.practicum.edit;
 
-import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import org.junit.Test;
 import ru.practicum.methods.CreateDeleteUser;

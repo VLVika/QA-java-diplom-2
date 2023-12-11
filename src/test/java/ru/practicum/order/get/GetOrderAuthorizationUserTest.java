@@ -14,7 +14,7 @@ public class GetOrderAuthorizationUserTest extends CreateDeleteUser {
 
     @DisplayName("Получение заказов авторизованного пользователя")
     @Test
-    public void getOrderAuthorizationUserTest(){
+    public void getOrderAuthorizationUserTest() {
 
         Response response = order.getOrdersWithAuthorization(token);
     }

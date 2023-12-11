@@ -3,20 +3,19 @@ package ru.practicum.steps;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
 import ru.practicum.pojo.CreateOrderPojoRq;
-import ru.practicum.pojo.LoginUserPojoRq;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
-import static ru.practicum.util.GlobalVariables.*;
+import static ru.practicum.util.GlobalVariables.ENDPOINT_INGREDIENTS;
+import static ru.practicum.util.GlobalVariables.ENDPOINT_ORDER;
 import static ru.practicum.util.Specification.*;
 
 public class Order {
 
     @Step("Получает список ингредиентов")
-    public static List<String> getIngredients(){
+    public static List<String> getIngredients() {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
@@ -29,7 +28,7 @@ public class Order {
     }
 
     @Step("Создаёт заказ с ингредиентами под авторизованным пользователем")
-    public Response createOrderAuthorUser(CreateOrderPojoRq request, String token){
+    public Response createOrderAuthorUser(CreateOrderPojoRq request, String token) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
@@ -45,7 +44,7 @@ public class Order {
 
 
     @Step("Создаёт заказ без ингредиентов под авторизованным пользователем")
-    public String createOrderAuthorUserWithoutIngredients(CreateOrderPojoRq request, String token){
+    public String createOrderAuthorUserWithoutIngredients(CreateOrderPojoRq request, String token) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
@@ -62,7 +61,7 @@ public class Order {
 
 
     @Step("Создаёт заказ без ингредиентов не авторизованным пользователем")
-    public String createOrderNoAuthorUserWithoutIngredients(CreateOrderPojoRq request){
+    public String createOrderNoAuthorUserWithoutIngredients(CreateOrderPojoRq request) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
@@ -78,7 +77,7 @@ public class Order {
 
 
     @Step("Создаёт заказ с ингредиентами не авторизованным пользователем")
-    public Response createOrderNoAuthorUserWithIngredients(CreateOrderPojoRq request){
+    public Response createOrderNoAuthorUserWithIngredients(CreateOrderPojoRq request) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
@@ -92,7 +91,7 @@ public class Order {
 
 
     @Step("Создаёт заказ с некорректным id ингредиента под авторизованным пользователем")
-    public Response createOrderAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request, String token){
+    public Response createOrderAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request, String token) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
@@ -107,7 +106,7 @@ public class Order {
 
 
     @Step("Создаёт заказ с некорректным id ингредиента не авторизованным пользователем")
-    public Response createOrderNoAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request){
+    public Response createOrderNoAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
@@ -121,7 +120,7 @@ public class Order {
 
 
     @Step("Получает список заказов авторизованного пользователя")
-    public static Response getOrdersWithAuthorization(String token){
+    public static Response getOrdersWithAuthorization(String token) {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
@@ -136,7 +135,7 @@ public class Order {
 
 
     @Step("Получает список заказов не авторизованного пользователя")
-    public static String getOrdersNoAuthorization(){
+    public static String getOrdersNoAuthorization() {
         return given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()

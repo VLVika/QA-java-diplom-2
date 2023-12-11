@@ -1,7 +1,6 @@
 package ru.practicum.order.get;
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Test;
 import ru.practicum.steps.Checks;
 import ru.practicum.steps.Order;
@@ -14,7 +13,7 @@ public class GetOrderNoAuthorizationUserTest {
 
     @DisplayName("Получение заказов не авторизованного пользователя")
     @Test
-    public void getOrderAuthorizationUserTest(){
+    public void getOrderAuthorizationUserTest() {
 
         String messageError = order.getOrdersNoAuthorization();
 

@@ -24,8 +24,5 @@ public class GlobalVariables {
     public static final String ENDPOINT_ORDER = "orders";
 
 
-
-
-
 }
 
