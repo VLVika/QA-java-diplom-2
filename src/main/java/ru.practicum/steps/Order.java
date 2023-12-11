@@ -120,4 +120,32 @@ public class Order {
     }
 
 
+    @Step("Получает список заказов авторизованного пользователя")
+    public static Response getOrdersWithAuthorization(String token){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .header("Authorization", token)
+                .when()
+                .get(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_OK)
+                .body("success", is(true))
+                .extract()
+                .response();
+    }
+
+
+    @Step("Получает список заказов не авторизованного пользователя")
+    public static String getOrdersNoAuthorization(){
+        return given()
+                .spec(REQ_SPEC_WITOUT_AUT)
+                .when()
+                .get(ENDPOINT_ORDER)
+                .then()
+                .spec(RES_SPEC_UNAUTHORIZED)
+                .body("success", is(false))
+                .extract()
+                .jsonPath().getString("message");
+    }
+
 }

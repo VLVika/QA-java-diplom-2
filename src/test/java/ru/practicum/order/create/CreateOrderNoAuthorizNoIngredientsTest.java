@@ -1,4 +1,4 @@
-package ru.practicum.order;
+package ru.practicum.order.create;
 
 
 import io.qameta.allure.junit4.DisplayName;
