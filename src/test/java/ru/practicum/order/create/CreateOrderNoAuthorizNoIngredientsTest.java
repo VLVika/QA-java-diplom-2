@@ -20,7 +20,7 @@ public class CreateOrderNoAuthorizNoIngredientsTest {
     public void createOrderNoAuthorUserWithoutIngredientsTest() {
 
         var request = CreateOrderModelRq.createOrder(emptyListForOrder);
-        String response = order.createOrderNoAuthorUserWithoutIngredients(request);
+        order.createOrderNoAuthorUserWithoutIngredients(request);
 
     }
 }

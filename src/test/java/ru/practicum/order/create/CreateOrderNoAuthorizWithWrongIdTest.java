@@ -1,7 +1,6 @@
 package ru.practicum.order.create;
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum.pojo.CreateOrderModelRq;
@@ -29,7 +28,7 @@ public class CreateOrderNoAuthorizWithWrongIdTest {
     public void createOrderNoAuthorUserWithWrongIdIngredientsTest() {
 
         var request = CreateOrderModelRq.createOrder(randomId);
-        Response response = order.createOrderNoAuthorUserWithWrongIdIngredients(request);
+        order.createOrderNoAuthorUserWithWrongIdIngredients(request);
 
     }
 

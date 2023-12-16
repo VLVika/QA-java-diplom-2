@@ -18,7 +18,7 @@ public class EditDataUserWithAuthorizationTest extends CreateDeleteUser {
     public void editFieldEmailWithAuthorizationTest() {
 
         var request = EditFieldsModelRq.editEmailField();
-        Response response = editField.editFieldEmailUser(request, token);
+         editField.editFieldEmailUser(request, token);
     }
 
 
@@ -27,7 +27,7 @@ public class EditDataUserWithAuthorizationTest extends CreateDeleteUser {
     public void editFieldNameWithAuthorizationTest() {
 
         var request = EditFieldsModelRq.editNameField();
-        Response response = editField.editFieldNameUser(request, token);
+        editField.editFieldNameUser(request, token);
     }
 
 
@@ -36,7 +36,7 @@ public class EditDataUserWithAuthorizationTest extends CreateDeleteUser {
     public void editFieldPasswordWithAuthorizationTest() {
 
         var request = EditFieldsModelRq.editPasswordField();
-        Response response = editField.editFieldPasswordUser(request, token);
+        editField.editFieldPasswordUser(request, token);
     }
 
 }

@@ -2,7 +2,6 @@ package ru.practicum.order.create;
 
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Before;
 import org.junit.Test;
 import ru.practicum.methods.GetIngredientsAndCreateList;
@@ -33,7 +32,7 @@ public class CreateOrderNoAuthoriaWithIngredientsTest {
     public void createOrderNoAuthorUserWithIngredientsTest() {
 
         var request = CreateOrderModelRq.createOrder(ingredientsForOrder);
-        Response response = order.createOrderNoAuthorUserWithIngredients(request);
+        order.createOrderNoAuthorUserWithIngredients(request);
 
     }
 }

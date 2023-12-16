@@ -17,7 +17,7 @@ public class LoginSuccessfullTest extends CreateDeleteUser {
     public void loginTest() {
 
         var request = LoginUserModelRq.login(email, password);
-        String messageError = newUserLogin.login(request);
+        newUserLogin.login(request);
 
     }
 

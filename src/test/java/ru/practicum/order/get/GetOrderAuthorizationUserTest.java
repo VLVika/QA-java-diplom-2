@@ -2,7 +2,6 @@ package ru.practicum.order.get;
 
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Test;
 import ru.practicum.methods.CreateDeleteUser;
 import ru.practicum.steps.Order;
@@ -16,6 +15,6 @@ public class GetOrderAuthorizationUserTest extends CreateDeleteUser {
     @Test
     public void getOrderAuthorizationUserTest() {
 
-        Response response = order.getOrdersWithAuthorization(token);
+        order.getOrdersWithAuthorization(token);
     }
 }

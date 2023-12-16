@@ -2,7 +2,6 @@ package ru.practicum.order.create;
 
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Test;
 import ru.practicum.methods.CreateDeleteUserGenerateRandomHash;
 import ru.practicum.pojo.CreateOrderModelRq;
@@ -19,7 +18,7 @@ public class CreateOrderAuthorWithWrongIdTest extends CreateDeleteUserGenerateRa
     public void createOrderAuthorUserWithWrongIdIngredientsTest() {
 
         var request = CreateOrderModelRq.createOrder(randomId);
-        Response response = order.createOrderAuthorUserWithWrongIdIngredients(request, token);
+        order.createOrderAuthorUserWithWrongIdIngredients(request, token);
 
 
     }

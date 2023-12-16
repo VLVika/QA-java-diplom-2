@@ -1,7 +1,6 @@
 package ru.practicum.order.create;
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Test;
 import ru.practicum.methods.CreateDeleteUserGetIngredients;
 import ru.practicum.pojo.CreateOrderModelRq;
@@ -19,7 +18,7 @@ public class CreateOrderSuccessfullTest extends CreateDeleteUserGetIngredients {
     public void createOrderAuthorUser() {
 
         var request = CreateOrderModelRq.createOrder(ingredientsForOrder);
-        Response response = order.createOrderAuthorUser(request, token);
+        order.createOrderAuthorUser(request, token);
 
     }
 
