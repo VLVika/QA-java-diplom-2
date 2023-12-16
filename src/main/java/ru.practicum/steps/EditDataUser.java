@@ -2,7 +2,6 @@ package ru.practicum.steps;
 
 
 import io.qameta.allure.Step;
-import io.restassured.response.Response;
 import ru.practicum.pojo.EditFieldEmailPojoRq;
 import ru.practicum.pojo.EditFieldNamePojoRq;
 import ru.practicum.pojo.EditFieldPasswordPojoRq;
@@ -15,8 +14,8 @@ import static ru.practicum.util.Specification.*;
 public class EditDataUser {
 
     @Step("Авторизированный Пользователь редактирует свои данные в поле email")
-    public Response editFieldEmailUser(EditFieldEmailPojoRq request, String token) {
-        return given()
+    public void editFieldEmailUser(EditFieldEmailPojoRq request, String token) {
+         given()
                 .spec(REQ_SPEC)
                 .header("Authorization", token)
                 .when()
@@ -31,8 +30,8 @@ public class EditDataUser {
 
 
     @Step("Авторизированный Пользователь редактирует свои данные в поле name")
-    public Response editFieldNameUser(EditFieldNamePojoRq request, String token) {
-        return given()
+    public void editFieldNameUser(EditFieldNamePojoRq request, String token) {
+         given()
                 .spec(REQ_SPEC)
                 .header("Authorization", token)
                 .when()
@@ -47,8 +46,8 @@ public class EditDataUser {
 
 
     @Step("Авторизированный Пользователь редактирует свои данные в поле password")
-    public Response editFieldPasswordUser(EditFieldPasswordPojoRq request, String token) {
-        return given()
+    public void editFieldPasswordUser(EditFieldPasswordPojoRq request, String token) {
+         given()
                 .spec(REQ_SPEC)
                 .header("Authorization", token)
                 .when()

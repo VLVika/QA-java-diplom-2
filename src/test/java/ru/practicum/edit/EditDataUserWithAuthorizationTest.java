@@ -1,7 +1,6 @@
 package ru.practicum.edit;
 
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.response.Response;
 import org.junit.Test;
 import ru.practicum.methods.CreateDeleteUser;
 import ru.practicum.pojo.EditFieldsModelRq;

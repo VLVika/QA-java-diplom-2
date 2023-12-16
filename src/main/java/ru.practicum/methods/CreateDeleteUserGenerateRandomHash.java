@@ -10,7 +10,7 @@ import static ru.practicum.methods.GenerateRandomHash.generateListWithRandomIdIn
 
 public class CreateDeleteUserGenerateRandomHash extends CreateDeleteUser {
 
-    private static String id;
+
     protected static ArrayList<String> randomId = new ArrayList<>();
 
     @DisplayName("Регистрирует пользователя, создаёт список с некорректным id ингредиента")

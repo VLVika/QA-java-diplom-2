@@ -1,7 +1,6 @@
 package ru.practicum.steps;
 
 import io.qameta.allure.Step;
-import io.restassured.response.Response;
 import ru.practicum.pojo.CreateOrderPojoRq;
 
 import java.util.List;
@@ -28,8 +27,8 @@ public class Order {
     }
 
     @Step("Создаёт заказ с ингредиентами под авторизованным пользователем")
-    public Response createOrderAuthorUser(CreateOrderPojoRq request, String token) {
-        return given()
+    public void createOrderAuthorUser(CreateOrderPojoRq request, String token) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
                 .when()
@@ -61,8 +60,8 @@ public class Order {
 
 
     @Step("Создаёт заказ без ингредиентов не авторизованным пользователем")
-    public String createOrderNoAuthorUserWithoutIngredients(CreateOrderPojoRq request) {
-        return given()
+    public void createOrderNoAuthorUserWithoutIngredients(CreateOrderPojoRq request) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
                 .body(request)
@@ -77,8 +76,8 @@ public class Order {
 
 
     @Step("Создаёт заказ с ингредиентами не авторизованным пользователем")
-    public Response createOrderNoAuthorUserWithIngredients(CreateOrderPojoRq request) {
-        return given()
+    public void createOrderNoAuthorUserWithIngredients(CreateOrderPojoRq request) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
                 .body(request)
@@ -91,8 +90,8 @@ public class Order {
 
 
     @Step("Создаёт заказ с некорректным id ингредиента под авторизованным пользователем")
-    public Response createOrderAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request, String token) {
-        return given()
+    public void createOrderAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request, String token) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
                 .when()
@@ -106,8 +105,8 @@ public class Order {
 
 
     @Step("Создаёт заказ с некорректным id ингредиента не авторизованным пользователем")
-    public Response createOrderNoAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request) {
-        return given()
+    public void createOrderNoAuthorUserWithWrongIdIngredients(CreateOrderPojoRq request) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .when()
                 .body(request)
@@ -120,8 +119,8 @@ public class Order {
 
 
     @Step("Получает список заказов авторизованного пользователя")
-    public static Response getOrdersWithAuthorization(String token) {
-        return given()
+    public static void getOrdersWithAuthorization(String token) {
+         given()
                 .spec(REQ_SPEC_WITOUT_AUT)
                 .header("Authorization", token)
                 .when()

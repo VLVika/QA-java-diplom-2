@@ -11,8 +11,8 @@ import static ru.practicum.util.Specification.*;
 public class Login {
 
     @Step("Логинится в систему")
-    public String login(LoginUserPojoRq request) {
-        return given()
+    public void login(LoginUserPojoRq request) {
+         given()
                 .spec(REQ_SPEC)
                 .when()
                 .body(request)
