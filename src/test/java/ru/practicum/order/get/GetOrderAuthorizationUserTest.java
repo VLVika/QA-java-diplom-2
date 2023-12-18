@@ -9,12 +9,11 @@ import ru.practicum.steps.Order;
 @DisplayName("Заказ")
 public class GetOrderAuthorizationUserTest extends CreateDeleteUser {
 
-    Order order = new Order();
 
     @DisplayName("Получение заказов авторизованного пользователя")
     @Test
     public void getOrderAuthorizationUserTest() {
 
-        order.getOrdersWithAuthorization(token);
+        Order.getOrdersWithAuthorization(token);
     }
 }

@@ -4,7 +4,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Locale;
 
 public class GenerateRandomHash {
 
@@ -15,7 +14,6 @@ public class GenerateRandomHash {
 
     public static ArrayList<String> generateListWithRandomIdIngredients() {
         String id = RandomStringUtils.randomAlphanumeric(24);
-        id.toLowerCase(Locale.ROOT);
         return randomId = new ArrayList<>(Arrays.asList(id));
 
     }
